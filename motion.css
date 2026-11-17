@@ -1,0 +1,44 @@
+/* Shared motion language: progressive disclosure, responsive cards and panel changes. */
+:root{--motion-ease:cubic-bezier(.2,.8,.2,1);--motion-short:220ms;--motion-enter:650ms}
+.entry-label{animation:page-content-in .6s var(--motion-ease) both}
+.entry h1>span{animation:page-content-in .8s var(--motion-ease) both}
+.entry h1>span:nth-child(1){animation-delay:.08s}.entry h1>span:nth-child(2){animation-delay:.16s}.entry h1>span:nth-child(3){animation-delay:.24s}
+.entry-description{animation:page-content-in .7s .32s var(--motion-ease) both}
+.entry-paths .entry-card{animation:page-content-in .7s .4s var(--motion-ease) backwards}
+.entry-paths .entry-card:nth-child(2){animation-delay:.5s}
+.entry-footer{animation:page-content-in .6s .6s ease both}
+.entry::after{animation:entry-light-drift 24s ease-in-out infinite alternate}
+.hero-copy .role{animation:page-content-in .65s var(--motion-ease) both}
+.hero h1>span{animation:page-content-in .8s var(--motion-ease) both}
+.hero h1>span:nth-child(1){animation-delay:.08s}.hero h1>span:nth-child(2){animation-delay:.18s}.hero h1>span:nth-child(3){animation-delay:.28s}
+.hero-scroll{animation:scroll-cue-in .7s .6s ease backwards}
+.hero-scroll>span{animation:scroll-cue-bob 1.8s ease-in-out infinite}
+.motion-reveal{opacity:0;transform:translate3d(0,20px,0);transition:opacity .7s ease,transform .7s var(--motion-ease);transition-delay:var(--reveal-delay,0ms)}
+.motion-reveal.is-revealed{opacity:1;transform:none}
+.motion-reveal:not(.is-revealed) *{animation-play-state:paused}
+.dossier-index a{transition:transform .24s var(--motion-ease),background .24s,border-color .24s,box-shadow .24s}
+.dossier-index a:hover{transform:translateY(-4px);background:#fbfdff;border-color:#91acee;box-shadow:0 15px 28px #24416a12}
+.dossier-index a[aria-selected=true]{box-shadow:0 7px 22px #3e6bf209}
+.dossier-panel:not([hidden]),.lc-panel:not([hidden]){animation:panel-content-in .42s var(--motion-ease)}
+.org-company{transition:transform .26s var(--motion-ease),border-color .26s,box-shadow .26s}
+.org-company:hover{transform:translateY(-4px);border-color:#b8c8e8;box-shadow:0 17px 35px #24416a0a}
+.ai-context>div{transition:border-color .25s,translate .25s var(--motion-ease)}
+.ai-context>div:hover{border-left-color:#a0bdff;translate:0 -2px}
+.lc-nav a{transition:background .23s,border-color .23s,color .23s,transform .23s var(--motion-ease),box-shadow .23s}
+.lc-nav a:hover{transform:translateY(-3px);box-shadow:0 8px 22px #020a1920}
+.lc-nav a[aria-selected=true]{transform:none}
+.lc-stepactions button{transition:background .23s,transform .23s,border-color .23s}
+.lc-stepactions button:hover{transform:translateX(3px)}
+.timeline summary{transition:color .2s,padding-left .2s}
+.timeline summary:hover{color:#315bd6;padding-left:4px}
+.timeline details[open]>dl{animation:panel-content-in .35s var(--motion-ease)}
+.top nav a{position:relative;text-decoration:none!important;transition:color .2s}
+.top nav a::after{content:"";position:absolute;left:0;right:0;bottom:5px;height:2px;background:var(--blue);border-radius:3px;transform:scaleX(0);transform-origin:left;transition:transform .25s var(--motion-ease)}
+.top nav a:hover::after,.top nav a[aria-current=location]::after{transform:scaleX(1)}
+.closing h2{transition:color .3s}
+@keyframes page-content-in{from{opacity:0;transform:translateY(17px)}to{opacity:1;transform:none}}
+@keyframes panel-content-in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+@keyframes scroll-cue-in{from{opacity:0}to{opacity:1}}
+@keyframes scroll-cue-bob{0%,100%{transform:translateY(-1px)}50%{transform:translateY(3px)}}
+@keyframes entry-light-drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-35px,35px,0)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.motion-reveal{opacity:1;transform:none}.dossier-index a:hover,.org-company:hover,.lc-nav a:hover{transform:none}.ai-context>div:hover{translate:none}}

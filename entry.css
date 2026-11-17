@@ -1,0 +1,28 @@
+:root{--entry-ink:#132238;--entry-muted:#70819b;--entry-blue:#3e6bf2;--entry-line:#d4dff2;--entry-sans:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",system-ui,PortfolioSans,sans-serif;font-family:var(--entry-sans)}
+.entry-page{margin:0;background:#f2f6fc;color:var(--entry-ink)}
+.entry{position:relative;isolation:isolate;overflow:hidden;min-height:100svh;display:flex;align-items:center;padding:64px 0;background:linear-gradient(130deg,#f9fbff,#edf3fc)}
+.entry::before{content:"";position:absolute;inset:0;z-index:-2;background-image:linear-gradient(#d9e5f970 1px,transparent 1px),linear-gradient(90deg,#d9e5f970 1px,transparent 1px);background-size:44px 44px}
+.entry::after{content:"";position:absolute;z-index:-1;width:650px;height:650px;right:-60px;top:-290px;border-radius:50%;background:radial-gradient(circle,#becffb99,transparent 70%);filter:blur(12px);pointer-events:none}
+.entry-content{position:relative;width:min(1120px,calc(100% - 80px));margin:auto;padding:12px 0 8px 28px;border-left:1px solid #b8cdf160}
+.entry-label{display:inline-block;padding:9px 13px;border-radius:100px;background:#ffffffb5;border:1px solid #d4def3;color:#315ad2;font:750 11px/1.5 var(--entry-sans);letter-spacing:.1em}
+.entry h1{font:800 clamp(48px,6.65vw,94px)/1.05 var(--entry-sans);letter-spacing:-.07em;margin:17px 0 24px;text-wrap:initial}
+.entry h1>span{display:block;word-break:keep-all}
+.entry-muted{color:#8090aa}
+.entry-description{max-width:690px;font-size:16px;line-height:1.9;letter-spacing:-.02em;color:#627590;margin:0 0 38px;text-wrap:pretty;word-break:keep-all}
+.entry-paths{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:min(930px,100%)}
+.entry-card{display:grid;grid-template-columns:28px 1fr 38px;gap:17px;align-items:center;min-width:0;padding:26px 22px;background:#ffffffc7;border:1px solid #d2dff2;border-radius:17px;box-shadow:0 18px 40px #24416a0b;transition:transform .24s,box-shadow .24s,border-color .24s;min-height:158px}
+.entry-card:hover{transform:translateY(-4px);box-shadow:0 22px 44px #24416a16;border-color:#8faef0}
+.entry-card:active{transform:translateY(-1px)}
+.entry-number{font-size:10px;font-weight:750;color:#889ab5;align-self:start;padding-top:4px}
+.entry-kicker{display:block;color:#3e6bf2;font-size:10px;font-weight:750;letter-spacing:.075em;margin-bottom:9px}
+.entry-card h2{font-size:24px;line-height:1.4;letter-spacing:-.04em;margin:0 0 9px;font-weight:750}
+.entry-card p{font-size:12px;line-height:1.75;color:#697d9b;margin:0;word-break:keep-all}
+.entry-arrow{display:grid;place-items:center;border:1px solid #d6e2f5;background:#f7faff;width:38px;height:38px;border-radius:50%;font:22px/1 Arial;color:#4269c6;transition:transform .24s}
+.entry-card:hover .entry-arrow{transform:translate(2px,-2px)}
+.entry-card-primary{background:#1e3049;color:#fff;border-color:#344a68}
+.entry-card-primary .entry-kicker{color:#98b8ff}.entry-card-primary p{color:#c3cfe0}.entry-card-primary .entry-number{color:#acbdd5}.entry-card-primary .entry-arrow{background:#ffffff0c;border-color:#ffffff25;color:#e4ecfb}
+.entry-footer{display:flex;gap:20px;flex-wrap:wrap;align-items:center;font-size:10px;color:#657994;margin-top:29px}
+.entry-footer a:hover{color:#315ad2}
+@media(max-width:850px){.entry-content{width:calc(100% - 64px);padding-left:20px}.entry h1{font-size:clamp(43px,7.8vw,70px)}.entry-description{font-size:14px}.entry-card{grid-template-columns:20px 1fr 32px;gap:10px;padding:23px 17px}.entry-card h2{font-size:21px}.entry-card p{font-size:11px}.entry-arrow{width:32px;height:32px}.entry-kicker{font-size:9px}}
+@media(max-width:600px){.entry{padding:45px 0;min-height:100svh}.entry-content{width:calc(100% - 40px);padding:0;border:0}.entry-label{font-size:8px;padding:7px 10px;letter-spacing:.06em}.entry h1{font-size:clamp(31px,8.75vw,51px);line-height:1.15;letter-spacing:-.065em;margin:20px 0}.entry-description{font-size:13px;line-height:1.85;margin-bottom:27px}.desktop-break{display:none}.entry-paths{grid-template-columns:1fr;gap:12px}.entry-card{min-height:131px;padding:20px;grid-template-columns:22px 1fr 34px;gap:12px;border-radius:15px}.entry-card h2{font-size:22px;margin-bottom:7px}.entry-card p{font-size:12px}.entry-kicker{font-size:9px;margin-bottom:7px}.entry-arrow{width:34px;height:34px}.entry-number{font-size:9px}.entry-footer{gap:10px 18px;font-size:9px;margin-top:24px}.entry-footer>span{width:100%}}
+@media(prefers-reduced-motion:reduce){.entry-card,.entry-arrow{transition:none}.entry-card:hover,.entry-card:hover .entry-arrow{transform:none}}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fb">
+<meta name="description" content="MORA RTM/REHAB에서 Selenium WebDriver의 XPath 변경 문제를 발견하고, 개발팀과 고유 ID를 적용해 업데이트 후 자동화 동작을 확인한 사례입니다.">
+<title>UI 식별자 개선으로 회귀 자동화의 안정성을 높인 경험 | 송경진</title>
+<link rel="stylesheet" href="../../style.css"><link rel="stylesheet" href="../../refresh.css"><link rel="stylesheet" href="../../article.css"><link rel="stylesheet" href="../../motion.css">
+<link rel="stylesheet" href="../../typography.css">
+</head>
+<body class="article-page">
+<a class="skip" href="#article-content">본문 바로가기</a>
+<header class="article-header"><div class="wrap"><a class="article-brand" href="../../portfolio/">송경진 <span>QA ENGINEER</span></a><nav aria-label="페이지 이동"><a href="../../portfolio/#principles">포트폴리오로 돌아가기 <span aria-hidden="true">↗</span></a><a href="../../">홈</a></nav></div></header>
+<main>
+  <section class="article-hero"><div class="article-wrap">
+    <div class="article-breadcrumb"><a href="../../portfolio/#principles">경험에서 정리한 QA 원칙</a><span aria-hidden="true">/</span><span>Testability</span></div>
+    <div class="article-kicker">SELENIUM WEBDRIVER · UI AUTOMATION</div>
+    <h1>UI 식별자 개선으로<br>회귀 자동화의 안정성을 높인 경험</h1>
+    <p class="article-lead">MORA RTM/REHAB의 Selenium WebDriver 회귀 자동화를 구성하며, 제품 업데이트에 따라 XPath가 바뀌는 문제를 발견했습니다. 개발팀과 고유 ID를 적용해 요소 탐색 기준을 개선하고, 업데이트 후에도 자동화가 정상 동작하는 것을 확인했습니다.</p>
+    <div class="article-tags"><span>MORA RTM / REHAB</span><span>개발팀 협업</span><span>적용 후 검증</span></div>
+  </div></section>
+  <article id="article-content" class="article-wrap article-content">
+    <section><div class="article-section-label">CONTEXT</div><h2>반복 회귀 검증을 자동화하던 과정</h2><p>기존 제품과 화이트라벨 버전의 공통 기능을 반복해서 확인하기 위해 Selenium WebDriver 기반 회귀 자동화를 구성했습니다. 화면의 요소를 찾아 클릭하고 값을 읽는 과정에서 XPath를 활용했습니다.</p></section>
+    <section><div class="article-section-label">PROBLEM</div><h2>기능은 같아도, 요소를 찾는 경로가 달라졌습니다</h2><p>제품이 업데이트되면서 XPath 값이 바뀌어 기존 자동화 코드의 요소 탐색에 문제가 발생했습니다. 기능의 정상 동작과 별개로, 화면 요소를 찾는 기준이 바뀌면 테스트가 영향을 받는 상황이었습니다.</p><p>문제는 XPath라는 방식 자체가 아니라, 업데이트와 함께 달라지는 경로를 테스트 대상의 식별 기준으로 사용하고 있다는 점이었습니다. 반복 실행할 회귀 테스트에는 같은 요소를 지속적으로 찾을 수 있는 기준이 필요했습니다.</p><div class="article-risk"><strong>회귀 테스트에서 구분해야 할 두 가지</strong><div><p><b>제품 기능의 실패</b><br>기대했던 동작이나 결과가 실제 제품에서 충족되지 않는 경우</p><p><b>요소 탐색의 실패</b><br>대상을 찾는 경로가 바뀌어 테스트가 필요한 동작까지 진행하지 못하는 경우</p></div></div></section>
+    <figure class="testability-flow" aria-labelledby="flow-title"><figcaption><span>TESTABILITY IMPROVEMENT</span><strong id="flow-title">화면의 경로에서, 요소의 고유한 기준으로</strong></figcaption><div class="testability-comparison"><div><span>BEFORE</span><h3>XPath 기반 요소 탐색</h3><code>화면 구조에 연결된 경로</code><p>업데이트로 XPath가 바뀌면 기존 테스트의 요소 탐색에 영향</p></div><span class="flow-arrow" aria-hidden="true">→</span><div><span>AFTER</span><h3>고유 ID 기반 요소 식별</h3><code>대상을 구분하는 고유 ID</code><p>같은 요소를 안정적으로 찾을 수 있도록 식별 기준 개선</p></div></div><p class="flow-caption">실제 서비스의 식별자 이름을 공개하지 않은 개념도입니다.</p></figure>
+    <section><div class="article-section-label">CONTRIBUTION</div><h2>개발팀과 자동화의 선행 조건을 맞췄습니다</h2><p>XPath 변경으로 발생한 문제를 바탕으로, 자동화 대상 요소에 고유 ID를 넣어 달라고 개발팀에 요청했습니다. 변경된 경로에 맞춰 테스트를 수정하는 대응에 더해, 제품에서 대상을 식별하는 기준도 함께 개선하고자 했습니다.</p><p>요청의 목적은 ID를 추가하는 것 자체가 아니라, 업데이트 이후에도 자동화가 같은 요소를 찾도록 만드는 것이었습니다. QA 관점에서 발견한 테스트 가능성(Testability)의 문제를 개발팀이 반영할 수 있는 개선 요청으로 연결했습니다.</p><div class="article-callout"><strong>제가 맡은 역할</strong><ul><li>Selenium WebDriver 자동화에서 XPath 변경에 따른 요소 탐색 문제 확인</li><li>개발팀에 자동화 대상 요소의 고유 ID 적용 요청</li><li>ID 반영 이후 제품 업데이트에서 자동화 동작 재확인</li></ul></div></section>
+    <section><div class="article-section-label">DESIGN PRINCIPLES</div><h2>이 경험에서 정리한 UI 식별자의 기준</h2><p>개발팀에 요청하고 실제 반영을 확인하는 과정을 통해, 자동화가 의존할 식별자는 다음 기준으로 살펴봐야 한다고 정리했습니다.</p><div class="identifier-principles"><div><span>UNIQUE</span><h3>대상을 고유하게 구분</h3><p>같은 화면에서 자동화가 어떤 요소를 찾는지 명확해야 합니다.</p></div><div><span>STABLE</span><h3>업데이트에도 의미 유지</h3><p>화면의 배치나 경로가 달라져도 같은 대상을 식별할 수 있어야 합니다.</p></div><div><span>RELEVANT</span><h3>실제 검증 동작과 연결</h3><p>클릭·입력·값 확인 등 테스트가 사용하는 대상을 기준으로 살펴봅니다.</p></div><div><span>VERIFIABLE</span><h3>반영 후 다시 검증</h3><p>식별자 적용 여부와 함께, 업데이트 이후 테스트의 실제 동작을 확인합니다.</p></div></div></section>
+    <section><div class="article-section-label">RESULT</div><h2>실제 적용과 업데이트 후 검증까지 이어졌습니다</h2><p>개발팀에서 요청한 고유 ID를 실제 제품에 적용했습니다. 이후 제품을 업데이트해도 기존에 겪었던 XPath 변경에 따른 문제가 발생하지 않는 것을 확인했습니다.</p><div class="article-result"><span>확인한 결과</span><strong>고유 ID 적용 후, 업데이트에서도 자동화가 정상 동작하는 것을 확인했습니다.</strong></div></section>
+    <section><div class="article-section-label">QA PRINCIPLE</div><h2>안정적인 자동화에는 제품의 테스트 가능성이 필요합니다</h2><p>자동화 코드를 작성하는 과정에서, 제품이 테스트 대상을 안정적으로 식별할 수 있는 구조도 함께 필요하다는 점을 확인했습니다. 테스트가 실행된다는 사실과 업데이트 이후에도 믿고 반복할 수 있다는 것은 함께 살펴봐야 할 기준입니다.</p><p>QA는 제품에서 반복 검증을 어렵게 만드는 조건을 발견하고, 이를 개발팀과 논의할 수 있는 개선 요구사항으로 구체화할 수 있습니다. 이 사례에서는 고유 ID의 실제 반영과 후속 업데이트 검증까지 연결했습니다.</p><blockquote>자동화의 안정성은 코드와 제품이 함께 만듭니다.<br><strong>QA는 그 사이의 검증 기준을 연결합니다.</strong></blockquote></section>
+    <footer class="article-ending"><span>MORA RTM / REHAB · 실무 경험</span><a href="../../portfolio/#principles">포트폴리오로 돌아가기 <span aria-hidden="true">→</span></a></footer>
+  </article>
+</main>
+</body></html>

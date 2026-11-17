@@ -1,0 +1,11 @@
+.hero{background:radial-gradient(ellipse at 79% 48%,#dbe6ff,transparent 57%),linear-gradient(105deg,#f6f8fe 8%,#eaf0ff 92%)}
+.hero-grid{min-height:440px;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px);padding-block:47px}
+.hero .role{font-family:var(--sans);font-size:15px;letter-spacing:-.025em}.byline{font:600 11px var(--mono);letter-spacing:.08em;color:#50648b}
+.hero h1{font:700 clamp(42px,4.45vw,66px)/1.23 var(--sans);letter-spacing:-.092em;margin:14px 0 18px}
+.hero h1 em{font-style:normal;color:#3357ba}.hero-copy>p{max-width:505px;line-height:1.8}
+.hero-sample{display:block;border-radius:16px;overflow:hidden;background:#fff;border:1px solid #bdcbea;box-shadow:0 18px 55px -22px #233c7355;transition:transform .2s}.hero-sample:hover{transform:translateY(-3px)}
+.sample-bar,.sample-caption{display:flex;align-items:center;justify-content:space-between}.sample-bar{padding:10px 14px;background:#243859;color:#edf2ff;font-weight:600;font-size:12px}.sample-bar i{display:inline-block;width:6px;height:6px;border-radius:100%;background:#b6c9ff;vertical-align:middle;margin-right:5px}.sample-git{font:11px/1.5 var(--mono);color:#d5e1ff}
+.sample-screen{background:#e4eaf4;padding:13px;position:relative}.sample-screen img{display:block;width:100%;height:auto;border-radius:4px}.sample-caption{padding:11px 16px}.sample-caption small{display:block;color:var(--blue);font-size:11px;font-weight:650}.sample-caption strong{font-size:16px;letter-spacing:-.045em}.sample-caption>span{font:23px Arial;color:var(--blue)}
+.top nav a[aria-current="location"]{color:#244cb2;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+@media(max-width:800px){.hero-grid{gap:22px}.bar{gap:15px}.top nav{gap:17px}.hero h1{font-size:clamp(35px,5.15vw,48px)}}
+@media(max-width:650px){.hero-grid{grid-template-columns:1fr;gap:22px;padding:29px 0 26px}.hero h1{font-size:clamp(36px,8.5vw,48px);margin:11px 0}.hero-copy>p{font-size:14px}.hero-sample{width:100%;max-width:410px;margin-inline:auto}.hero .role{font-size:13px}.byline{font-size:10px}.sample-bar{padding:5px 12px}.sample-screen{padding:7px 9px}.sample-caption{padding:7px 11px}.sample-caption strong{font-size:14px}.sample-caption small{display:inline;margin-right:6px}.top nav{gap:0}.bar{gap:0}}

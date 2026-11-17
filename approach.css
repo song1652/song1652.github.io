@@ -1,0 +1,54 @@
+.approach-page{background:#132238;color:#f2f6ff;font-family:var(--sans)}
+.approach-header{height:67px;border-bottom:1px solid #ffffff13;background:#132238eb;backdrop-filter:blur(16px);position:sticky;top:0;z-index:10}
+.approach-header>.wrap{display:flex;align-items:center;justify-content:space-between;height:100%}
+.approach-brand{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:700;letter-spacing:-.025em}
+.approach-brand small{display:block;font:600 8px/1.5 Arial,sans-serif;letter-spacing:.14em;color:#a2b5d1}
+.approach-header-actions{display:flex;gap:12px;align-items:center}
+.approach-header-actions>a{display:flex;align-items:center;gap:15px;padding:9px 14px;border:1px solid #ffffff24;border-radius:8px;font-size:11px;color:#cdd9ef;transition:background .2s,border-color .2s,transform .2s}
+.approach-header-actions>a:hover{background:#ffffff0b;border-color:#ffffff50;transform:translateY(-1px)}
+.approach-page .approach-section{min-height:calc(100svh - 67px);padding-block:68px 50px}
+.approach-page .quality-copy h1{font-family:var(--sans);font-size:clamp(35px,3.3vw,47px);font-weight:800;line-height:1.25;letter-spacing:-.05em;margin:0 0 27px;color:#fff;text-wrap:initial}
+.approach-page .quality-copy h1 em{font-style:normal;color:#99b5ff}
+.quality-node{translate:var(--float-x,0px) var(--float-y,0px);transition:translate .22s cubic-bezier(.2,.8,.2,1),background .25s,border-color .25s,box-shadow .25s;will-change:translate}
+.quality-node:hover{background:#2a3d59;border-color:#86a9ff80;box-shadow:0 15px 32px #020d2850}
+.quality-node h3,.quality-node p{transition:color .25s}
+.quality-node:hover h3{color:#bfd2ff}
+.quality-orbit-lines circle:first-child{transform-box:fill-box;transform-origin:center;animation:qa-orbit-turn 28s linear infinite}
+.quality-qa{isolation:isolate}
+.quality-qa::after{content:"";position:absolute;inset:-14px;z-index:-1;border:1px solid #8dabf825;border-radius:50%;animation:qa-core-breathe 5s ease-in-out infinite}
+.quality-participation{position:relative;isolation:isolate;overflow:hidden;background:#ffffff0a}
+.quality-participation::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#4872d6,#81a2ff);transform:scaleX(0);transform-origin:left}
+.approach-page.js-motion .quality-copy>*{opacity:0;transform:translateY(14px)}
+.approach-page.js-motion .quality-orbit{opacity:0;transform:scale(.94)}
+.approach-page.js-motion .quality-node{opacity:0}
+.approach-page.js-motion .quality-lifecycle{opacity:0;transform:translateY(25px)}
+.approach-page.js-motion .quality-stages li{opacity:0;transform:translateY(9px)}
+.approach-page.js-motion .approach-ending{opacity:0;transform:translateY(15px)}
+.approach-section.is-visible .quality-copy>*{animation:qa-content-in .65s cubic-bezier(.2,.8,.2,1) forwards}
+.approach-section.is-visible .quality-copy h1{animation-delay:.08s}
+.approach-section.is-visible .quality-copy>p:nth-of-type(1){animation-delay:.16s}
+.approach-section.is-visible .quality-copy>p:nth-of-type(2){animation-delay:.24s}
+.approach-section.is-visible .quality-copy blockquote{animation-delay:.32s}
+.approach-section.is-visible .quality-orbit{animation:qa-board-in .85s cubic-bezier(.2,.8,.2,1) forwards}
+.approach-section.is-visible .quality-node{animation:qa-node-in .55s ease forwards}
+.approach-section.is-visible .quality-node-design{animation-delay:.12s}
+.approach-section.is-visible .quality-node-dev{animation-delay:.24s}
+.approach-section.is-visible .quality-node-team{animation-delay:.36s}
+.approach-section.is-visible .quality-lifecycle{animation:qa-content-in .7s .25s ease forwards}
+.approach-section.is-visible .quality-stages li{animation:qa-content-in .5s ease forwards;animation-delay:calc(.4s + var(--stage,0)*.09s)}
+.quality-stages li:nth-child(2){--stage:1}.quality-stages li:nth-child(3){--stage:2}.quality-stages li:nth-child(4){--stage:3}.quality-stages li:nth-child(5){--stage:4}
+.approach-section.is-visible .quality-participation::before{animation:qa-participation-fill 1.3s .7s cubic-bezier(.2,.8,.2,1) forwards}
+.approach-ending{display:flex;align-items:center;justify-content:space-between;gap:28px;border-top:1px solid #ffffff20;margin-top:35px;padding-top:27px}
+.approach-ending>div>span{font-size:10px;font-weight:750;color:#96b7ff;letter-spacing:.08em}
+.approach-ending p{font-size:16px;color:#e2ebfb;margin-top:8px;font-weight:600}
+.approach-ending>a{display:flex;align-items:center;gap:26px;flex:none;min-height:48px;padding:0 19px;border:1px solid #ffffff29;border-radius:10px;background:#f8fbff;color:#172b49;font-size:12px;font-weight:750;box-shadow:0 10px 24px #030c1c33;transition:transform .22s,box-shadow .22s}
+.approach-ending>a:hover{transform:translateY(-3px);box-shadow:0 15px 30px #030c1c55}
+.approach-ending>a>span{transition:translate .22s}.approach-ending>a:hover>span{translate:4px 0}
+.approach-ending.is-visible{animation:qa-content-in .65s ease forwards}
+@keyframes qa-orbit-turn{to{transform:rotate(360deg)}}
+@keyframes qa-core-breathe{0%,100%{opacity:.35;scale:1}50%{opacity:.75;scale:1.045}}
+@keyframes qa-content-in{to{opacity:1;transform:none}}
+@keyframes qa-board-in{to{opacity:1;transform:scale(1)}}
+@keyframes qa-node-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes qa-participation-fill{to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){.approach-page.js-motion .quality-copy>*,.approach-page.js-motion .quality-orbit,.approach-page.js-motion .quality-node,.approach-page.js-motion .quality-lifecycle,.approach-page.js-motion .quality-stages li,.approach-page.js-motion .approach-ending{opacity:1;transform:none}.quality-participation::before{transform:scaleX(1)}.quality-node{translate:none!important}}
