@@ -1,0 +1,9 @@
+#lab .project-repo-links{display:flex;gap:10px;width:100%;margin-top:20px;flex-wrap:wrap}
+#lab .project-repo-button{display:flex;align-items:center;gap:11px;flex:1;min-width:190px;min-height:68px;margin:0;padding:13px 15px;border:1px solid #7396fb;border-radius:10px;background:#edf3ff;color:#152d58;font-size:14px;line-height:1.4;font-weight:750;text-decoration:none;transition:background .2s,box-shadow .2s,transform .2s,border-color .2s}
+#lab .project-repo-button svg{flex-shrink:0;color:#315bd6}
+#lab .project-repo-button>span{display:block;flex:1}
+#lab .project-repo-button small{display:block;margin-top:4px;font-size:11px;line-height:1.4;color:#526985;font-weight:500}
+#lab .project-repo-button>b{font-size:18px;font-weight:500;color:#315bd6}
+#lab .project-repo-button:hover{background:#fff;border-color:#a3bcff;box-shadow:0 6px 20px #040d2026;transform:translateY(-2px)}
+#lab .project-repo-button:focus-visible{outline:3px solid #a9c1ff;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){#lab .project-repo-button{transition:none}#lab .project-repo-button:hover{transform:none}}
