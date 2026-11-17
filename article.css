@@ -60,6 +60,7 @@
 .principle-feature .principle-link{display:inline-flex;gap:22px;align-items:center;font-size:12px;font-weight:650;color:#4369ba;margin-top:23px;transition:gap .2s}
 .principle-feature .principle-link:hover{gap:28px}
 .principle-feature h3 a:hover{color:#315bd6}
+.principle-feature+.principle-feature{margin-top:28px}
 .principle-visual{padding:27px;background:#172b49;color:#e4ecfb;border-radius:13px}
 .principle-visual>span{display:block;color:#9bb7ed;font-size:11px;margin-bottom:12px}
 .principle-visual>strong{display:block;font-size:19px;line-height:1.5;color:#fff}

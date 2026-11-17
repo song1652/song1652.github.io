@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fb">
+<meta name="description" content="Figma만으로 AI에 TC 작성을 요청했던 경험을 바탕으로, 화면과 요구사항·정책의 맥락을 함께 제공해야 한다고 정리한 QA 원칙입니다.">
+<title>AI의 TC 작성에 필요한 요구사항의 맥락 | 송경진</title>
+<link rel="stylesheet" href="../../style.css"><link rel="stylesheet" href="../../refresh.css"><link rel="stylesheet" href="../../article.css"><link rel="stylesheet" href="../../motion.css"><link rel="stylesheet" href="../../typography.css">
+</head><body class="article-page">
+<a class="skip" href="#article-content">본문 바로가기</a>
+<header class="article-header"><div class="wrap"><a class="article-brand" href="../../portfolio/">송경진 <span>QA ENGINEER</span></a><nav aria-label="페이지 이동"><a href="../../portfolio/#principles">포트폴리오로 돌아가기 <span aria-hidden="true">↗</span></a><a href="../../">홈</a></nav></div></header>
+<main>
+<section class="article-hero"><div class="article-wrap">
+<div class="article-breadcrumb"><a href="../../portfolio/#principles">경험에서 정리한 QA 원칙</a><span aria-hidden="true">/</span><span>AI &amp; Test Design</span></div>
+<div class="article-kicker">AI 활용 · TEST CASE DESIGN</div>
+<h1>AI가 검증 기준을 이해하도록<br>화면과 요구사항의 맥락을 함께 제공하기</h1>
+<p class="article-lead">Figma만으로 AI에 테스트 케이스 작성을 요청했던 경험이 있습니다. 이 과정에서 AI가 제품을 이해하려면 화면뿐 아니라 PRD와 정책, 관련 문서까지 함께 제공해야 한다는 점을 느꼈습니다.</p>
+<div class="article-tags"><span>Figma</span><span>PRD·관련 문서</span><span>TC 초안 검토</span></div>
+</div></section>
+<article id="article-content" class="article-wrap article-content">
+<section><div class="article-section-label">CONTEXT</div><h2>처음에는 Figma를 중심으로 TC 작성을 요청했습니다</h2><p>화면 구성을 바탕으로 TC 초안을 만들기 위해 Figma를 AI에 제공했습니다. 이 경험을 통해, 화면에 표현된 정보가 제품의 요구사항 전체를 설명해 주는 것은 아니라는 점을 생각하게 됐습니다.</p><p>검증해야 할 동작의 이유와 기대 결과를 이해하려면, 화면과 연결된 기획 의도와 정책도 함께 알아야 합니다.</p></section>
+<section><div class="article-section-label">INSIGHT</div><h2>AI에 전달할 것은 화면과 검증의 근거입니다</h2><p>PRD, 정책, 관련 문서 링크, Figma 등 제공할 수 있는 자료를 함께 전달해야 한다고 정리했습니다. 문서의 양을 늘리는 데서 끝내지 않고, 각 자료가 어떤 기능과 검증 조건을 설명하는지 연결하는 것이 중요합니다.</p><div class="identifier-principles"><div><span>REQUIREMENTS</span><h3>PRD와 요구사항</h3><p>기능의 목적, 구현 범위와 기대 동작을 전달합니다.</p></div><div><span>POLICY</span><h3>정책과 관련 문서</h3><p>조건별 처리 기준과 예외 규칙을 함께 전달합니다.</p></div><div><span>UI &amp; FLOW</span><h3>Figma와 화면 흐름</h3><p>요구사항이 실제 화면과 사용자 동작에 어떻게 연결되는지 보여줍니다.</p></div><div><span>ACCESS</span><h3>자료를 읽었는지 확인</h3><p>링크만 전달하는 데 그치지 않고, AI가 실제로 내용을 읽을 수 있는지 확인합니다.</p></div></div></section>
+<section><div class="article-section-label">WORKING PRINCIPLE</div><h2>자료에서 확인한 내용과 추정을 구분합니다</h2><p>앞으로 TC 초안을 요청할 때는 자료를 바탕으로 작성하도록 하고, 문서에 없는 조건이나 자료 간 충돌은 확인할 질문으로 남기도록 하려 합니다. AI가 부족한 맥락을 임의의 기대 결과로 채우지 않도록 하기 위한 기준입니다.</p><div class="article-callout"><strong>TC 초안을 검토할 때 확인할 기준</strong><ul><li>전달한 PRD·정책·Figma의 내용을 실제로 읽었는가?</li><li>각 TC의 사전 조건과 기대 결과가 제공한 자료에 근거하는가?</li><li>확인되지 않은 조건이나 문서 간 차이를 추정으로 처리하지 않았는가?</li><li>실제 제품의 로직과 동작은 QA가 별도로 확인했는가?</li></ul></div></section>
+<section><div class="article-section-label">QA PRINCIPLE</div><h2>TC 초안의 출발점은 제품을 이해할 수 있는 맥락입니다</h2><p>이 경험에서 얻은 원칙은 AI에 TC 작성을 맡기기 전에, 제품을 판단할 근거부터 충분히 제공해야 한다는 것입니다. AI의 초안은 검토의 출발점이며, 검증 범위와 기대 결과의 타당성은 QA가 확인해야 합니다.</p><blockquote>화면을 전달하는 것에서 한 걸음 더 나아가,<br><strong>무엇을 기준으로 검증해야 하는지 함께 전달합니다.</strong></blockquote></section>
+<a class="article-back" href="../../portfolio/#principles">← 포트폴리오로 돌아가기</a>
+</article></main>
+</body></html>
